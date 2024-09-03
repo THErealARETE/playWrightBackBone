@@ -1,0 +1,27 @@
+{
+  "name": "moralisqatest",
+  "version": "1.0.0",
+  "description": "Moralis QA Test",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e-head":"playwright test tests/e2e --headed",
+    "test:api": "playwright test tests/api",
+    "test:load": "k6 run loadTest/blockNumberLoadTest.js && k6 run loadTest/getBlockByNumberLoadTest.js && k6 run loadTest/getTransactionByHashLoadTest.js",
+    "test:all": "playwright test --headed",
+    "test:e2e-uimode": "playwright test/e2e -ui"
+    },
+  "author": "Pelumi Benjamin",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "^1.45.3",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^20.14.10",
+    "k6": "^0.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.9.5"
+  }
+}
